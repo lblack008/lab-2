@@ -14,4 +14,10 @@ public partial class Rock : Obstacle
     {
         return new Vector2(_spawnX, _spawnY);
     }
+
+    //переопределение движения влево
+    protected override void Move(float delta)
+	{
+		Position += velocity * delta;
+	}
 }

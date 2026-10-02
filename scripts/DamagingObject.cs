@@ -13,11 +13,9 @@ public partial class DamagingObject : Area2D
         Move((float)delta);
     }
 
-	//перемещение объекта влево
+	//перемещение объекта 
 	protected virtual void Move(float delta)
-	{
-		Position += velocity * delta;
-	}
+	{}
 
 	//инициализация объекта и подключение коллизии
     public override void _Ready()
