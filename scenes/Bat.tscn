@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cx412grhubhxt"]
+
+[ext_resource type="Script" uid="uid://cyvfirk8hn7at" path="res://scripts/Bat.cs" id="1_pa2t3"]
+[ext_resource type="Texture2D" uid="uid://dol8jph15h13b" path="res://sprites/Bat_sprite.png" id="2_q2p6y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pa2t3"]
+radius = 54.0
+height = 184.0
+
+[node name="Bat" type="Area2D" unique_id=715330554]
+collision_layer = 2
+script = ExtResource("1_pa2t3")
+Health = 10.0
+metadata/_custom_type_script = "uid://cyvfirk8hn7at"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1989931952]
+position = Vector2(5.5000014, -17.500004)
+scale = Vector2(0.51875, 0.5)
+texture = ExtResource("2_q2p6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1668867992]
+position = Vector2(8, -25)
+shape = SubResource("CapsuleShape2D_pa2t3")

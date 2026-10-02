@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dy640x6c4d1dv"]
+
+[ext_resource type="Script" uid="uid://depbcklmx4uvw" path="res://scripts/Player.cs" id="1_3vyb7"]
+
+[sub_resource type="Gradient" id="Gradient_3vyb7"]
+offsets = PackedFloat32Array(0, 0.25721154, 0.85336536)
+colors = PackedColorArray(0.5176471, 0, 0, 1, 0.5541599, 0.062373318, 0.06546299, 1, 1, 0.8239843, 0.8648005, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_60lig"]
+gradient = SubResource("Gradient_3vyb7")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74qev"]
+radius = 31.06445
+
+[node name="Player" type="CharacterBody2D" unique_id=1525113941]
+script = ExtResource("1_3vyb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786641765]
+texture = SubResource("GradientTexture2D_60lig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2043496631]
+shape = SubResource("CircleShape2D_74qev")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1499887031]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=389596595]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

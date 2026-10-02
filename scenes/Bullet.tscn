@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://baj1x8i6t7gtf"]
+
+[ext_resource type="Script" uid="uid://dsgs4vwapbjay" path="res://scripts/Bullet.cs" id="1_hf8mt"]
+
+[sub_resource type="Gradient" id="Gradient_p1sfj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mm1bc"]
+gradient = SubResource("Gradient_p1sfj")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(16.5, 8)
+
+[node name="Bullet" type="CharacterBody2D" unique_id=1269067437]
+collision_mask = 2
+script = ExtResource("1_hf8mt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1272906245]
+position = Vector2(2.7500005, 1.0000001)
+scale = Vector2(0.2578125, 0.125)
+texture = SubResource("GradientTexture2D_mm1bc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=637531263]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=898201488]
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=2054657235]
+position = Vector2(2.75, 1)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=40246481]
+rect = Rect2(-6, -3, 17, 8)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://w41sbetqa2jc"]
+
+[ext_resource type="Script" uid="uid://dvd3mwxalg7b1" path="res://scripts/Rock.cs" id="1_bpoff"]
+
+[sub_resource type="Gradient" id="Gradient_bpoff"]
+colors = PackedColorArray(0.13090086, 0.16025579, 0.20431525, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bpoff"]
+gradient = SubResource("Gradient_bpoff")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpoff"]
+size = Vector2(45, 46)
+
+[node name="Rock" type="Area2D" unique_id=2147296575]
+collision_layer = 2
+script = ExtResource("1_bpoff")
+metadata/_custom_type_script = "uid://dvd3mwxalg7b1"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=554363298]
+scale = Vector2(0.71875, 0.734375)
+texture = SubResource("GradientTexture2D_bpoff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1676552063]
+shape = SubResource("RectangleShape2D_bpoff")

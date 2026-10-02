@@ -1,0 +1,17 @@
+using Godot;
+using System;
+
+[GlobalClass]
+public partial class Zombie : Enemy
+{
+	[Export]
+	private float _spawnX = 1300f;
+	[Export]
+	private float _spawnY = 450f;
+
+    //задание точки спавна
+    public override Vector2 GetSpawnPosition()
+    {
+        return new Vector2(_spawnX, _spawnY);
+    }
+}

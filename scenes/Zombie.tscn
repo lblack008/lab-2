@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ddn2kicjkeftb"]
+
+[ext_resource type="Script" uid="uid://b57l2dbwdfgb" path="res://scripts/Zombie.cs" id="1_blicy"]
+[ext_resource type="Texture2D" uid="uid://bel6ddcs2bq63" path="res://sprites/Zombie_sprite.png" id="2_t3ikf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
+radius = 54.0
+height = 184.0
+
+[node name="Zombie" type="Area2D" unique_id=1924383971]
+collision_layer = 2
+script = ExtResource("1_blicy")
+metadata/_custom_type_script = "uid://b57l2dbwdfgb"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=355237748]
+texture_filter = 1
+position = Vector2(17, 12.999999)
+scale = Vector2(3.4999998, 3.3061225)
+texture = ExtResource("2_t3ikf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1111539432]
+position = Vector2(15, 15)
+shape = SubResource("CapsuleShape2D_4kxuq")
