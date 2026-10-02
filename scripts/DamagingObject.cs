@@ -43,6 +43,7 @@ public partial class DamagingObject : Area2D
 			//вывод в консоль информации о том, с каким объектом столкнулся игрок
             GD.Print($"Player hit by {Name}!");
             //CallDeferred обрабатывает ошибку, возникающую при обычном вызове QueueFree()
+			//ReloadCurrentScene прописан для того, чтобы после смерти игрока раннер запускался снова. Так он будет бесконечным
             GetTree().CallDeferred(SceneTree.MethodName.ReloadCurrentScene); 
         }
     }
@@ -56,7 +57,7 @@ public partial class DamagingObject : Area2D
 	{
 		Timer timer = new Timer();
 		timer.WaitTime = 1f;
-		
+
 		timer.OneShot = true;
 		AddChild(timer);
 		timer.Start();
